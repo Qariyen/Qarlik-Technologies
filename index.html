@@ -82,19 +82,18 @@
       align-items: center;
       gap: 14px;
       user-select: none;
-      /* toned-down glow */
-      filter: drop-shadow(0 0 4px rgba(0,200,255,0.12)) drop-shadow(0 0 9px rgba(123,47,255,0.08));
+      /* soft light glow behind the logo */
+      filter: drop-shadow(0 0 14px rgba(0,200,255,0.25)) drop-shadow(0 0 28px rgba(123,47,255,0.15));
       transition: filter 0.4s;
     }
 
     #logo-wrap img {
-      /* bigger logo */
-      width: 320px;
+      width: 180px;
       height: auto;
       display: block;
-      /* less bright: removed heavy invert/brightness boost */
-      filter: invert(1) brightness(1.15) contrast(0.95);
-      opacity: 0.85;
+      /* solid black logo */
+      filter: brightness(0) saturate(100%);
+      opacity: 1;
     }
 
     #logo-wrap .brand {
@@ -400,7 +399,7 @@
     if (hitH || hitV) {
       colorIdx = (colorIdx + 1) % colors.length;
       const c = colors[colorIdx];
-      wrap.style.filter = `drop-shadow(0 0 6px ${c}) drop-shadow(0 0 12px ${c.replace('0.28','0.10')})`;
+      wrap.style.filter = `drop-shadow(0 0 16px ${c}) drop-shadow(0 0 30px ${c.replace('0.28','0.15')})`;
 
       if (hitH && hitV) {
         const now = Date.now();

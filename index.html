@@ -82,8 +82,8 @@
       align-items: center;
       gap: 14px;
       user-select: none;
-      /* soft light glow behind the logo */
-      filter: drop-shadow(0 0 14px rgba(0,200,255,0.25)) drop-shadow(0 0 28px rgba(123,47,255,0.15));
+      /* subtle white light behind the logo */
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.18)) drop-shadow(0 0 22px rgba(255,255,255,0.1));
       transition: filter 0.4s;
     }
 
@@ -399,7 +399,7 @@
     if (hitH || hitV) {
       colorIdx = (colorIdx + 1) % colors.length;
       const c = colors[colorIdx];
-      wrap.style.filter = `drop-shadow(0 0 16px ${c}) drop-shadow(0 0 30px ${c.replace('0.28','0.15')})`;
+      wrap.style.filter = `drop-shadow(0 0 14px rgba(255,255,255,0.28)) drop-shadow(0 0 26px rgba(255,255,255,0.15))`;
 
       if (hitH && hitV) {
         const now = Date.now();
